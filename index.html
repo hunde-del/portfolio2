@@ -1,209 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portfolio of hunde-del — web developer. Projects, contact and resume." />
+  <title>Portfolio</title>
 
-    <title>Hunduma Aboma - Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header id="main-header">
-      <nav>
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
+  <!-- Favicon: you can add a 32x32 or 16x16 favicon to the repo and reference it here -->
+  <!-- <link rel="icon" href="/favicon.ico"> -->
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">hunde-del</a>
+
+      <nav class="nav" id="primary-navigation" aria-label="Primary">
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Open menu">
+          <span class="hamburger"></span>
+        </button>
+
+        <ul id="nav-list" class="nav-list" data-visible="false">
+          <li><a href="#home">Home</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li class="theme-toggle-wrap">
+            <button id="theme-toggle" class="btn-ghost" aria-pressed="false" title="Toggle color theme">Toggle theme</button>
+          </li>
         </ul>
       </nav>
-      <section id="hero">
-        <h1>Hunduma Aboma</h1>
-        <h2>Backend Engineer | ECE Student</h2>
-        <p>
-          Building efficient and scalable backend solutions. Always learning.
-          Always coding.
-        </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn">View Projects</a>
-          <a href="Hunduma_Aboma_CV.pdf" target="_blank" class="btn-outline"
-            >Download CV</a
-          >
-        </div>
-      </section>
+    </div>
+  </header>
 
-      <button id="dark-mode-toggle">🌑 Dark Mode</button>
-    </header>
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-avatar">
+        <img src="profile.png" alt="Photo of hunde-del" class="avatar" width="240" height="240" loading="lazy" />
+      </div>
 
-    <section id="about" class="section">
-      <div class="section-title">About</div>
-      <div class="about-content">
-        <img src="profile.png" alt="Hunduma Aboma" class="profile-img" />
-        <div>
-          <p>
-            Hi, I'm Hunduma Aboma, a Backend Engineer and ECE student.<br />
-            I’m passionate about creating efficient, scalable backend
-            systems,<br />
-            and love collaborating with others to solve tough tech problems.<br />
-            I work mainly with JavaScript (Node.js), Python and popular backend
-            frameworks.<br />
-            Always eager to learn, and open to new opportunities!
-          </p>
+      <div class="hero-content">
+        <h1>Hello — I'm <span class="accent">hunde-del</span></h1>
+        <p class="lede">I build clean, accessible web experiences. I focus on semantic HTML, performance, and pleasant UX.</p>
+
+        <div class="hero-cta">
+          <a class="btn-primary" href="#projects">See projects</a>
+          <a class="btn-outline" href="#contact">Contact me</a>
         </div>
+
+        <ul class="meta">
+          <li>Location: Remote</li>
+          <li>Availability: Open to freelance & collaborations</li>
+        </ul>
       </div>
     </section>
 
-    <section id="skills" class="section">
-      <div class="section-title">Skills</div>
-      <div class="skills-grid">
-        <div>
-          <h4>Languages</h4>
-          <div class="badge">JavaScript</div>
-          <div class="badge">Python</div>
-          <div class="badge">C++</div>
-          <div class="badge">TypeScript</div>
-        </div>
-        <div>
-          <h4>Frameworks</h4>
-          <div class="badge">Node.js</div>
-          <div class="badge">Express</div>
-          <div class="badge">React</div>
-          <div class="badge">Django</div>
-        </div>
-        <div>
-          <h4>Databases</h4>
-          <div class="badge">MongoDB</div>
-          <div class="badge">PostgreSQL</div>
-          <div class="badge">MySQL</div>
-        </div>
-        <div>
-          <h4>Tools</h4>
-          <div class="badge">Git</div>
-          <div class="badge">Docker</div>
-          <div class="badge">Linux</div>
-          <div class="badge">REST API</div>
-        </div>
-      </div>
-    </section>
+    <section id="projects" class="section container">
+      <h2>Selected projects</h2>
+      <p class="section-desc">Small selection of recent work and experiments.</p>
 
-    <section id="projects" class="section">
-      <div class="section-title">Projects</div>
-
-      <!-- Featured Project -->
-      <div class="featured-project">
-        <img
-          src="featured_project.jpg"
-          alt="Featured Project Screenshot"
-          class="featured-img"
-        />
-        <div>
-          <h3>API Backend for E-commerce App</h3>
-          <p>
-            RESTful backend for a multi-vendor e-commerce platform.<br />
-            Built with Node.js, Express, and MongoDB.<br />
-            Features user authentication, payment gateway, admin dashboard, and
-            API documentation using Swagger.
-          </p>
-          <div class="project-badges">
-            <span class="badge">Node.js</span>
-            <span class="badge">Express</span>
-            <span class="badge">MongoDB</span>
-            <span class="badge">Swagger</span>
-          </div>
-          <div class="project-links">
-            <a
-              href="https://github.com/yourusername/ecommerce-backend"
-              target="_blank"
-              class="btn"
-              >GitHub</a
-            >
-            <a href="#" target="_blank" class="btn-outline">Live Demo</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projects Grid -->
       <div class="projects-grid">
-        <div class="project-card" onclick="showProjectModal(0)">
-          <img src="portfolio_thumb.jpg" alt="Portfolio Website" />
-          <h4>Personal Portfolio Site</h4>
-          <p>
-            Responsive one-page website with portfolio, skills, and contact
-            sections.
-          </p>
-          <div class="project-badges">
-            <span class="badge">HTML</span>
-            <span class="badge">CSS</span>
-            <span class="badge">JavaScript</span>
+        <article class="project-card">
+          <img src="project 1.jpg" alt="Screenshot of Project 1" loading="lazy" />
+          <div class="project-body">
+            <h3>Project 1</h3>
+            <p class="project-desc">Brief description of the project, the tech used and the problem solved.</p>
+            <div class="project-actions">
+              <a class="btn-outline" href="#" aria-label="View project 1">View</a>
+              <a class="btn-ghost" href="#" aria-label="Source for project 1">Source</a>
+            </div>
           </div>
-        </div>
-        <div class="project-card" onclick="showProjectModal(1)">
-          <img src="forum_api_thumb.jpg" alt="Forum API" />
-          <h4>Forum REST API</h4>
-          <p>
-            Full REST API for a discussion forum, with users, threads, roles,
-            and likes.
-          </p>
-          <div class="project-badges">
-            <span class="badge">Node.js</span>
-            <span class="badge">Express</span>
-            <span class="badge">JWT</span>
-          </div>
-        </div>
-        <!-- Add more project cards as you like! -->
+        </article>
+
+        <!-- Add more project cards here. Keep images optimized and small. -->
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <div class="section-title">Contact</div>
-      <form class="contact-form" id="contact-form">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <textarea
-          id="message"
-          rows="5"
-          placeholder="Your Message"
-          required
-        ></textarea>
-        <button type="submit" class="btn">Send Message</button>
+    <section id="about" class="section container">
+      <h2>About</h2>
+      <p>I enjoy building performant and accessible web apps. I care about clarity, maintainability, and delightful interactions.</p>
+
+      <ul class="skills">
+        <li>HTML & ARIA</li>
+        <li>CSS (Flexbox / Grid)</li>
+        <li>Vanilla JS</li>
+        <li>React & tooling</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Contact</h2>
+      <p>If you'd like to work together, send me a message — or use the mailto link below.</p>
+
+      <form class="contact-form" action="mailto:daboma230@gmail.com" method="get" onsubmit="/* progressive enhancement: mailto fallback */">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <div class="form-actions">
+          <button class="btn-primary" type="submit">Send email</button>
+          <a class="btn-outline" href="mailto:your-daboma230@gmail.com">Open mail client</a>
+        </div>
       </form>
-      <div class="direct-email">
-        Or email me directly:
-        <a href="mailto:daboma230@gmail.com">daboma230@gmail.com</a>
-      </div>
     </section>
+  </main>
 
-    <footer>
-      <p>&copy; 2025 Hunduma Aboma</p>
-      <div class="social">
-        <a href="https://github.com/hunde-del" target="_blank">GitHub</a> |
-        <a href="https://linkedin.com/in/Hunduma-Aboma" target="_blank"
-          >LinkedIn</a
-        >
-        |
-        <a href="mailto:daboma230@gmail.com">Email</a>
-      </div>
-    </footer>
-
-    <!-- Project Modal -->
-    <div id="project-modal" class="modal">
-      <div class="modal-content">
-        <span class="close" id="close-modal">&times;</span>
-        <div id="modal-body">
-          <!-- Filled by JS -->
-        </div>
-      </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> hunde-del. Built with ❤️ and clean code.</p>
+      <ul class="social">
+        <!-- Replace with your profiles -->
+        <li><a href="#" rel="noopener">GitHub</a></li>
+        <li><a href="#" rel="noopener">LinkedIn</a></li>
+      </ul>
     </div>
+  </footer>
 
-    <script src="script.js"></script>
-
-    <!-- Project Modal Structure -->
-    <div id="project-modal" class="modal">
-      <div class="modal-content">
-        <span class="close" id="close-modal">&times;</span>
-        <div id="modal-body"><!-- filled by JS --></div>
-      </div>
-    </div>
-  </body>
+  <script src="script.js" defer></script>
+</body>
 </html>
