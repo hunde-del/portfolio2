@@ -3,18 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portfolio of hunde-del — web developer. Projects, contact and resume." />
-  <title>Portfolio</title>
-
-  <!-- Favicon: you can add a 32x32 or 16x16 favicon to the repo and reference it here -->
-  <!-- <link rel="icon" href="/favicon.ico"> -->
+  <meta name="description" content="Portfolio of hunde-del — web developer. Includes a small to‑do app with localStorage, skills and certificates." />
+  <title>hunde-del — Portfolio & To‑Do</title>
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#home">My Portfolio</a>
+      <a class="brand" href="#home">hunde-del</a>
 
       <nav class="nav" id="primary-navigation" aria-label="Primary">
         <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Open menu">
@@ -24,7 +21,9 @@
         <ul id="nav-list" class="nav-list" data-visible="false">
           <li><a href="#home">Home</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#todo">To‑Do</a></li>
           <li><a href="#contact">Contact</a></li>
           <li class="theme-toggle-wrap">
             <button id="theme-toggle" class="btn-ghost" aria-pressed="false" title="Toggle color theme">Toggle theme</button>
@@ -41,22 +40,124 @@
       </div>
 
       <div class="hero-content">
-        <h1>Hello — I'm <span class="accent">Hunduma Aboma</span></h1>
-        <p class="lede">I build modern and responsive user interfaces as a frontend developer. I focus on creating clean designs, smooth interactions, and accessible layouts using HTML, CSS, and JavaScript.
-
-I enjoy turning ideas and designs into interactive web experiences that are easy to use and visually engaging. I pay attention to details such as responsiveness, performance, and usability to ensure a high-quality user experience.
-
-I am passionate about learning new frontend technologies and continuously improving my skills through hands-on projects and practice.</p>
+        <h1>Hello — I'm <span class="accent">hunde-del</span></h1>
+        <p class="lede">I build clean, accessible web experiences. This page includes a small to‑do app and a skills & certificates showcase.</p>
 
         <div class="hero-cta">
           <a class="btn-primary" href="#projects">See projects</a>
           <a class="btn-outline" href="#contact">Contact me</a>
+          <a class="btn-outline" href="resume.pdf" download>Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2>Skills</h2>
+      <p class="section-desc">My core skills and approximate proficiency. Toggle percentages if you prefer cleaner view.</p>
+
+      <div class="skills-controls">
+        <button id="toggle-skill-percent" class="btn-ghost" aria-pressed="false">Show %</button>
+      </div>
+
+      <ul class="skills-grid" id="skills-list" aria-label="Skills list">
+        <!-- Example items: update/extend to your real skills -->
+        <li class="skill">
+          <div class="skill-head"><strong>HTML & ARIA</strong><span class="skill-percent" data-value="95">95%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+        </li>
+
+        <li class="skill">
+          <div class="skill-head"><strong>CSS (Grid / Flex)</strong><span class="skill-percent" data-value="90">90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </li>
+
+        <li class="skill">
+          <div class="skill-head"><strong>JavaScript (Vanilla)</strong><span class="skill-percent" data-value="85">85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </li>
+
+        <li class="skill">
+          <div class="skill-head"><strong>React & Tooling</strong><span class="skill-percent" data-value="75">75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="certificates" class="section container">
+      <h2>Certificates</h2>
+      <p class="section-desc">Verified certificates and courses. Click a certificate to view details or open verification links.</p>
+
+      <div class="cert-grid" id="cert-grid">
+        <!-- Sample certificates: change to your real certs & urls -->
+        <article class="cert-card" data-cert-id="cert-1" data-cert-url="https://example.com/cert1.pdf">
+          <img alt="Certificate 1 thumbnail" src="dark.webp" loading="lazy" />
+          <div class="cert-body">
+            <h3>Front-end Development Certificate</h3>
+            <p class="muted">Example Institute — 2024</p>
+            <div class="cert-actions">
+              <button class="btn-outline view-cert" data-id="cert-1">View</button>
+              <a class="btn-ghost" href="https://example.com/cert1" target="_blank" rel="noopener">Verify</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cert-card" data-cert-id="cert-2" data-cert-url="https://example.com/cert2.pdf">
+          <img alt="Certificate 2 thumbnail" src="dark.webp" loading="lazy" />
+          <div class="cert-body">
+            <h3>Accessible Web Design</h3>
+            <p class="muted">Accessibility Org — 2023</p>
+            <div class="cert-actions">
+              <button class="btn-outline view-cert" data-id="cert-2">View</button>
+              <a class="btn-ghost" href="https://example.com/cert2" target="_blank" rel="noopener">Verify</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Modal for certificate viewer -->
+      <div id="cert-modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cert-modal-title">
+        <div class="modal-content" role="document">
+          <button class="modal-close" aria-label="Close certificate viewer">✕</button>
+          <h3 id="cert-modal-title">Certificate</h3>
+          <div class="modal-body">
+            <!-- image or embedded PDF will appear here -->
+            <img id="cert-modal-image" src="" alt="" />
+            <p id="cert-modal-meta" class="muted"></p>
+            <a id="cert-modal-open" class="btn-outline" href="#" target="_blank" rel="noopener">Open verification</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="todo" class="section container">
+      <h2>To‑Do</h2>
+      <p class="section-desc">A lightweight to‑do list stored in your browser (localStorage).</p>
+
+      <div class="todo-app" aria-live="polite">
+        <form id="todo-form" class="todo-form" aria-label="Add a new task">
+          <label for="todo-input" class="sr-only">New task</label>
+          <input id="todo-input" name="task" type="text" placeholder="Add a new task…" autocomplete="off" required />
+          <button type="submit" class="btn-primary">Add</button>
+        </form>
+
+        <div class="todo-controls" aria-hidden="false">
+          <div class="filters" role="tablist" aria-label="Filter tasks">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">Active</button>
+            <button class="filter-btn" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+          </div>
+
+          <div class="todo-actions">
+            <button id="clear-completed" class="btn-ghost">Clear completed</button>
+            <button id="clear-all" class="btn-ghost" title="Remove all tasks">Clear all</button>
+          </div>
         </div>
 
-        <ul class="meta">
-          <li>Location: Remote</li>
-          <li>Availability: Open to freelance & collaborations</li>
-        </ul>
+        <ul id="todo-list" class="todo-list" aria-label="Tasks list"></ul>
+
+        <div class="todo-footer">
+          <span id="items-left" class="muted">0 items left</span>
+        </div>
       </div>
     </section>
 
@@ -66,32 +167,13 @@ I am passionate about learning new frontend technologies and continuously improv
 
       <div class="projects-grid">
         <article class="project-card">
-          <img src="project1.png" alt="Screenshot of Project 1" loading="lazy" />
+          <img src="project 1.jpg" alt="Screenshot of Project 1" loading="lazy" />
           <div class="project-body">
-            <h3>My First Project</h3>
-            <p class="project-desc">Pong Game!<br/>
-
-A classic Pong game built using HTML, CSS, and JavaScript. The game features player and opponent paddles, ball movement, collision detection, and score tracking. It provides an interactive and responsive gameplay experience directly in the browser.</p>
+            <h3>Project 1</h3>
+            <p class="project-desc">Brief description of the project, the tech used and the problem solved.</p>
             <div class="project-actions">
-              <a class="btn-outline" href="https://hunde-del.github.io/pong-game/" aria-label="View project 1">View</a>
+              <a class="btn-outline" href="#" aria-label="View project 1">View</a>
               <a class="btn-ghost" href="#" aria-label="Source for project 1">Source</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Add more project cards here. Keep images optimized and small. -->
-         <article class="project-card">
-          <img src="project2.png" alt="Screenshot of Project 2" loading="lazy" />
-          <div class="project-body">
-            <h3>My Portfolio Project</h3>
-            <p class="project-desc">Portfolio!<br/>
-
-This portfolio showcases my work as a frontend web developer, highlighting projects built with HTML, CSS, and JavaScript. It includes interactive applications such as a calculator app, a movie app, and a browser-based game, demonstrating my ability to build responsive layouts, dynamic user interfaces, and engaging user experiences.
-
-The portfolio reflects my learning journey, problem-solving skills, and attention to clean design and functionality. Each project focuses on usability, responsiveness, and modern frontend development practices.</p>
-            <div class="project-actions">
-              <a class="btn-outline" href="https://hunde-del.github.io/portfolio/" aria-label="View project 2">View</a>
-              <a class="btn-ghost" href="#" aria-label="Source for project 2">Source</a>
             </div>
           </div>
         </article>
@@ -100,25 +182,14 @@ The portfolio reflects my learning journey, problem-solving skills, and attentio
 
     <section id="about" class="section container">
       <h2>About</h2>
-      <p>I enjoy building performant and accessible web apps. I care about clarity, maintainability, and delightful interactions. I build modern and responsive user interfaces as a frontend developer. I focus on creating clean designs, smooth interactions, and accessible layouts using HTML, CSS, and JavaScript.
-
-I enjoy turning ideas and designs into interactive web experiences that are easy to use and visually engaging. I pay attention to details such as responsiveness, performance, and usability to ensure a high-quality user experience.
-
-I am passionate about learning new frontend technologies and continuously improving my skills through hands-on projects and practice.</p>
-
-      <ul class="skills">
-        <li>HTML & ARIA</li>
-        <li>CSS (Flexbox / Grid)</li>
-        <li>PHP JS</li>
-        <li>React & tooling</li>
-      </ul>
+      <p>I enjoy building performant and accessible web apps. I care about clarity, maintainability, and delightful interactions.</p>
     </section>
 
     <section id="contact" class="section container">
       <h2>Contact</h2>
       <p>If you'd like to work together, send me a message — or use the mailto link below.</p>
 
-      <form class="contact-form" action="mailto:daboma230@gmail.com" method="get" onsubmit="/* progressive enhancement: mailto fallback */">
+      <form class="contact-form" action="mailto:your-email@example.com" method="get">
         <label for="name">Name</label>
         <input id="name" name="name" type="text" required />
 
@@ -130,7 +201,7 @@ I am passionate about learning new frontend technologies and continuously improv
 
         <div class="form-actions">
           <button class="btn-primary" type="submit">Send email</button>
-          <a class="btn-outline" href="mailto:your-daboma230@gmail.com">Open mail client</a>
+          <a class="btn-outline" href="mailto:daboma230@gmail.com">Open mail client</a>
         </div>
       </form>
     </section>
@@ -138,9 +209,8 @@ I am passionate about learning new frontend technologies and continuously improv
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Hunduma Aboma.</p>
+      <p>© <span id="year"></span> Hunduma Aboma</p>
       <ul class="social">
-        <!-- Replace with your profiles -->
         <li><a href="https://github.com/hunde-del" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/hunduma-aboma-a832512a4/" rel="noopener">LinkedIn</a></li>
       </ul>
