@@ -69,12 +69,13 @@ body{
 .project-actions{display:flex;gap:0.5rem;margin-top:0.6rem}
 
 /* Skills */
-.skills-grid{display:grid;gap:0.8rem}
+.skills-grid{display:grid;gap:0.8rem;grid-template-columns:repeat(2,minmax(0,1fr))}
 .skill{padding:0.65rem;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
 .skill-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.45rem}
 .skill-percent{color:var(--muted);font-weight:600}
 .skill-bar{height:10px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
 .skill-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0;transition:width 900ms cubic-bezier(.2,.9,.2,1)}
+.skill-desc{margin:0.5rem 0 0;color:var(--muted);font-size:0.95rem}
 
 /* Certificates */
 .cert-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
@@ -82,6 +83,7 @@ body{
 .cert-card:hover{transform:translateY(-6px)}
 .cert-card img{width:160px;height:100%;object-fit:cover}
 .cert-body{padding:0.7rem;display:flex;flex-direction:column;justify-content:space-between}
+.cert-actions{display:flex;gap:0.5rem;margin-top:0.5rem}
 
 /* Modal */
 .modal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(3,6,10,0.7);z-index:90;padding:2rem}
@@ -89,16 +91,6 @@ body{
 .modal-wrap{background:var(--surface);color:var(--text);border-radius:10px;max-width:980px;width:100%;box-shadow:0 12px 40px rgba(2,6,23,0.6);overflow:auto;max-height:90vh;padding:1rem;position:relative}
 .modal-close{position:absolute;right:1rem;top:1rem;background:transparent;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer}
 .modal-body img, .modal-body iframe{width:100%;height:60vh;display:block;border-radius:6px;}
-
-/* Extras */
-.extras-grid{display:grid;grid-template-columns:1fr 340px;gap:1rem}
-.card{background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);padding:1rem;border-radius:10px}
-.todo-form{display:flex;gap:0.5rem}
-.todo-form input{flex:1;padding:0.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text)}
-.todo-list{list-style:none;padding:0;margin:0}
-.todo-item{display:flex;align-items:center;gap:0.6rem;padding:0.45rem;border-radius:8px;margin-bottom:0.4rem}
-.toggle{width:20px;height:20px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);display:grid;place-items:center;cursor:pointer}
-.toggle.checked{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:#042024}
 
 /* Contact */
 .contact-form{display:grid;gap:0.6rem;max-width:680px}
@@ -112,7 +104,7 @@ body{
 /* Responsive */
 @media (max-width:1000px){
   .projects-grid,.cert-grid{grid-template-columns:1fr}
-  .extras-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
   .hero-card{grid-template-columns:1fr; text-align:center}
   .avatar{width:220px;height:220px}
   .nav-toggle{display:block}
