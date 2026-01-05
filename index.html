@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="hunde-del — Front-end developer. Portfolio, skills, certifications, and tools." />
+  <meta name="description" content="hunde-del — Front-end developer. Portfolio, skills and certifications." />
   <meta name="author" content="hunde-del" />
   <title>hunde-del — Front-end Developer</title>
 
@@ -30,7 +30,6 @@
           <li><a href="#work">Work</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#certificates">Certifications</a></li>
-          <li><a href="#extras">Extras</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><button id="theme-toggle" class="btn-icon" title="Toggle theme" aria-pressed="false">🌙</button></li>
         </ul>
@@ -57,7 +56,6 @@
           <ul class="social-list" aria-label="Social links">
             <li><a href="#" rel="noopener" target="_blank">GitHub</a></li>
             <li><a href="#" rel="noopener" target="_blank">LinkedIn</a></li>
-            <li><a href="#" rel="noopener" target="_blank">Twitter</a></li>
           </ul>
         </div>
       </div>
@@ -81,15 +79,13 @@
             </div>
           </div>
         </article>
-
-        <!-- Add more project cards here -->
       </div>
     </section>
 
     <section id="skills" class="section container">
       <header class="section-head">
         <h2>Skills</h2>
-        <p class="section-sub">Core competencies and typical levels. Percentages are approximate.</p>
+        <p class="section-sub">Core strengths I bring to projects. Percentages are approximate proficiency.</p>
       </header>
 
       <div class="skills-grid" id="skills-list">
@@ -99,6 +95,7 @@
             <span class="skill-percent" data-value="96">96%</span>
           </div>
           <div class="skill-bar" aria-hidden="true"><div class="skill-fill" style="width:96%"></div></div>
+          <p class="muted skill-desc">Semantic markup, ARIA, screen reader testing and inclusive patterns.</p>
         </div>
 
         <div class="skill">
@@ -107,6 +104,7 @@
             <span class="skill-percent" data-value="92">92%</span>
           </div>
           <div class="skill-bar" aria-hidden="true"><div class="skill-fill" style="width:92%"></div></div>
+          <p class="muted skill-desc">Responsive design, Grid/Flex, animations and component systems.</p>
         </div>
 
         <div class="skill">
@@ -115,14 +113,16 @@
             <span class="skill-percent" data-value="88">88%</span>
           </div>
           <div class="skill-bar" aria-hidden="true"><div class="skill-fill" style="width:88%"></div></div>
+          <p class="muted skill-desc">DOM, async patterns, tooling, and writing testable modules.</p>
         </div>
 
         <div class="skill">
           <div class="skill-meta">
             <strong>React & Tooling</strong>
-            <span class="skill-percent" data-value="80">80%</span>
+            <span class="skill-percent" data-value="82">82%</span>
           </div>
-          <div class="skill-bar" aria-hidden="true"><div class="skill-fill" style="width:80%"></div></div>
+          <div class="skill-bar" aria-hidden="true"><div class="skill-fill" style="width:82%"></div></div>
+          <p class="muted skill-desc">Component design, state management, build tooling and performance.</p>
         </div>
       </div>
     </section>
@@ -130,30 +130,54 @@
     <section id="certificates" class="section container">
       <header class="section-head">
         <h2>Certifications</h2>
-        <p class="section-sub">Verified courses and certificates — click to view details.</p>
+        <p class="section-sub">Selected verified certificates and completed courses.</p>
       </header>
 
       <div class="cert-grid" id="cert-grid">
-        <article class="cert-card" data-cert-url="https://example.com/cert1.pdf" tabindex="0">
-          <img src="dark.webp" alt="Certificate thumbnail">
+        <article class="cert-card" data-cert-url="https://example.com/cert-frontend.pdf" tabindex="0">
+          <img src="dark.webp" alt="Front-end certificate thumbnail">
           <div class="cert-body">
-            <h3>Front-end Certification</h3>
+            <h3>Front‑end Development Certificate</h3>
             <p class="muted">Example Institute · 2024</p>
             <div class="cert-actions">
-              <button class="btn-outline view-cert" data-id="cert-1">Preview</button>
-              <a class="btn-ghost" href="https://example.com/cert1" target="_blank" rel="noopener">Verify</a>
+              <button class="btn-outline view-cert" data-id="cert-frontend">Preview</button>
+              <a class="btn-ghost" href="https://example.com/cert-frontend" target="_blank" rel="noopener">Verify</a>
             </div>
           </div>
         </article>
 
-        <article class="cert-card" data-cert-url="https://example.com/cert2.pdf" tabindex="0">
-          <img src="dark.webp" alt="Certificate thumbnail">
+        <article class="cert-card" data-cert-url="https://example.com/cert-accessibility.pdf" tabindex="0">
+          <img src="dark.webp" alt="Accessibility certificate thumbnail">
           <div class="cert-body">
             <h3>Accessible Web Design</h3>
             <p class="muted">Accessibility Org · 2023</p>
             <div class="cert-actions">
-              <button class="btn-outline view-cert" data-id="cert-2">Preview</button>
-              <a class="btn-ghost" href="https://example.com/cert2" target="_blank" rel="noopener">Verify</a>
+              <button class="btn-outline view-cert" data-id="cert-accessibility">Preview</button>
+              <a class="btn-ghost" href="https://example.com/cert-accessibility" target="_blank" rel="noopener">Verify</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cert-card" data-cert-url="https://example.com/cert-js.pdf" tabindex="0">
+          <img src="dark.webp" alt="JavaScript certificate thumbnail">
+          <div class="cert-body">
+            <h3>JavaScript Advanced</h3>
+            <p class="muted">JS Academy · 2022</p>
+            <div class="cert-actions">
+              <button class="btn-outline view-cert" data-id="cert-js">Preview</button>
+              <a class="btn-ghost" href="https://example.com/cert-js" target="_blank" rel="noopener">Verify</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cert-card" data-cert-url="https://example.com/cert-performance.pdf" tabindex="0">
+          <img src="dark.webp" alt="Performance certificate thumbnail">
+          <div class="cert-body">
+            <h3>Web Performance Optimization</h3>
+            <p class="muted">Fast Web Institute · 2021</p>
+            <div class="cert-actions">
+              <button class="btn-outline view-cert" data-id="cert-performance">Preview</button>
+              <a class="btn-ghost" href="https://example.com/cert-performance" target="_blank" rel="noopener">Verify</a>
             </div>
           </div>
         </article>
@@ -169,47 +193,6 @@
           </div>
           <div class="modal-footer">
             <a id="cert-modal-open" class="btn-outline" href="#" target="_blank" rel="noopener">Open verification</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="extras" class="section container">
-      <header class="section-head">
-        <h2>Extras</h2>
-        <p class="section-sub">Small utilities and extras: a compact To‑Do, and a printable résumé.</p>
-      </header>
-
-      <div class="extras-grid">
-        <div class="card todo-card">
-          <h3>Quick To‑Do</h3>
-          <form id="todo-form" class="todo-form" aria-label="Add a new task">
-            <input id="todo-input" name="task" type="text" placeholder="Add a task…" autocomplete="off" required>
-            <button class="btn-primary" type="submit">Add</button>
-          </form>
-
-          <div class="todo-controls">
-            <div class="filters">
-              <button class="filter-btn active" data-filter="all">All</button>
-              <button class="filter-btn" data-filter="active">Active</button>
-              <button class="filter-btn" data-filter="completed">Done</button>
-            </div>
-            <div class="todo-actions">
-              <button id="clear-completed" class="btn-ghost">Clear done</button>
-              <button id="clear-all" class="btn-ghost">Clear all</button>
-            </div>
-          </div>
-
-          <ul id="todo-list" class="todo-list" aria-label="Tasks list"></ul>
-          <div class="todo-footer"><span id="items-left" class="muted">0 items left</span></div>
-        </div>
-
-        <div class="card resume-card">
-          <h3>Résumé</h3>
-          <p class="muted">Download a printable PDF or view an optimized online résumé.</p>
-          <div class="card-actions">
-            <a class="btn-primary" href="resume.pdf" download>Download PDF</a>
-            <a class="btn-outline" href="#" target="_blank" rel="noopener">View online</a>
           </div>
         </div>
       </div>
