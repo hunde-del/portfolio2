@@ -3,217 +3,246 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portfolio of hunde-del — web developer. Includes a small to‑do app with localStorage, skills and certificates." />
-  <title>hunde-del — Portfolio & To‑Do</title>
+  <meta name="description" content="hunde-del — Front-end developer. Portfolio, skills, certifications, and tools." />
+  <meta name="author" content="hunde-del" />
+  <title>hunde-del — Front-end Developer</title>
 
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="dark.webp" type="image/webp">
+  <meta name="theme-color" content="#0f1724">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
+  <header class="site-header" role="banner">
+    <div class="container header-grid">
       <a class="brand" href="#home">hunde-del</a>
 
-      <nav class="nav" id="primary-navigation" aria-label="Primary">
+      <nav id="primary-navigation" class="nav" aria-label="Main navigation">
         <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Open menu">
-          <span class="hamburger"></span>
+          <span class="hamburger" aria-hidden="true"></span>
         </button>
 
         <ul id="nav-list" class="nav-list" data-visible="false">
           <li><a href="#home">Home</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#work">Work</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#certificates">Certificates</a></li>
-          <li><a href="#todo">To‑Do</a></li>
+          <li><a href="#certificates">Certifications</a></li>
+          <li><a href="#extras">Extras</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li class="theme-toggle-wrap">
-            <button id="theme-toggle" class="btn-ghost" aria-pressed="false" title="Toggle color theme">Toggle theme</button>
-          </li>
+          <li><button id="theme-toggle" class="btn-icon" title="Toggle theme" aria-pressed="false">🌙</button></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero container">
-      <div class="hero-avatar">
-        <img src="profile.png" alt="Photo of hunde-del" class="avatar" width="240" height="240" loading="lazy" />
-      </div>
+  <main id="home" class="site-main">
+    <section class="hero container" id="hero">
+      <div class="hero-card" role="region" aria-labelledby="hero-heading">
+        <div class="hero-media">
+          <img src="profile.png" alt="Photo of hunde-del" class="avatar" width="300" height="300" loading="lazy">
+        </div>
+        <div class="hero-content">
+          <h1 id="hero-heading">Hi, I'm <span class="accent">hunde-del</span></h1>
+          <p class="lead">I design and build accessible, performant front‑end experiences. I focus on clarity, maintainable code, and delightful interactions.</p>
 
-      <div class="hero-content">
-        <h1>Hello — I'm <span class="accent">hunde-del</span></h1>
-        <p class="lede">I build clean, accessible web experiences. This page includes a small to‑do app and a skills & certificates showcase.</p>
+          <div class="hero-ctas">
+            <a class="btn-primary" href="#work">View work</a>
+            <a class="btn-outline" href="resume.pdf" download>Download résumé</a>
+            <a class="text-link" href="#contact">Contact</a>
+          </div>
 
-        <div class="hero-cta">
-          <a class="btn-primary" href="#projects">See projects</a>
-          <a class="btn-outline" href="#contact">Contact me</a>
-          <a class="btn-outline" href="resume.pdf" download>Download Resume</a>
+          <ul class="social-list" aria-label="Social links">
+            <li><a href="#" rel="noopener" target="_blank">GitHub</a></li>
+            <li><a href="#" rel="noopener" target="_blank">LinkedIn</a></li>
+            <li><a href="#" rel="noopener" target="_blank">Twitter</a></li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section container">
-      <h2>Skills</h2>
-      <p class="section-desc">My core skills and approximate proficiency. Toggle percentages if you prefer cleaner view.</p>
+    <section id="work" class="section container">
+      <header class="section-head">
+        <h2>Selected projects</h2>
+        <p class="section-sub">Worked on scalable front‑end projects with focus on UX, performance, and accessibility.</p>
+      </header>
 
-      <div class="skills-controls">
-        <button id="toggle-skill-percent" class="btn-ghost" aria-pressed="false">Show %</button>
+      <div class="projects-grid" role="list">
+        <article class="project-card" role="listitem">
+          <img src="project 1.jpg" alt="Project screenshot" loading="lazy">
+          <div class="project-info">
+            <h3>Project 1 — UI & Front-end</h3>
+            <p class="muted">SPA with performance optimizations and accessible components.</p>
+            <div class="project-actions">
+              <a class="btn-outline" href="#" target="_blank" rel="noopener">Live</a>
+              <a class="btn-ghost" href="#" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add more project cards here -->
       </div>
+    </section>
 
-      <ul class="skills-grid" id="skills-list" aria-label="Skills list">
-        <!-- Example items: update/extend to your real skills -->
-        <li class="skill">
-          <div class="skill-head"><strong>HTML & ARIA</strong><span class="skill-percent" data-value="95">95%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
-        </li>
+    <section id="skills" class="section container">
+      <header class="section-head">
+        <h2>Skills</h2>
+        <p class="section-sub">Core competencies and typical levels. Percentages are approximate.</p>
+      </header>
 
-        <li class="skill">
-          <div class="skill-head"><strong>CSS (Grid / Flex)</strong><span class="skill-percent" data-value="90">90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-        </li>
+      <div class="skills-grid" id="skills-list">
+        <div class="skill">
+          <div class="skill-meta">
+            <strong>HTML & Accessibility</strong>
+            <span class="skill-percent" data-value="96">96%</span>
+          </div>
+          <div class="skill-bar" aria-hidden="true"><div class="skill-fill" style="width:96%"></div></div>
+        </div>
 
-        <li class="skill">
-          <div class="skill-head"><strong>JavaScript (Vanilla)</strong><span class="skill-percent" data-value="85">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-        </li>
+        <div class="skill">
+          <div class="skill-meta">
+            <strong>CSS (Layout & Design)</strong>
+            <span class="skill-percent" data-value="92">92%</span>
+          </div>
+          <div class="skill-bar" aria-hidden="true"><div class="skill-fill" style="width:92%"></div></div>
+        </div>
 
-        <li class="skill">
-          <div class="skill-head"><strong>React & Tooling</strong><span class="skill-percent" data-value="75">75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
-        </li>
-      </ul>
+        <div class="skill">
+          <div class="skill-meta">
+            <strong>JavaScript (Vanilla)</strong>
+            <span class="skill-percent" data-value="88">88%</span>
+          </div>
+          <div class="skill-bar" aria-hidden="true"><div class="skill-fill" style="width:88%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-meta">
+            <strong>React & Tooling</strong>
+            <span class="skill-percent" data-value="80">80%</span>
+          </div>
+          <div class="skill-bar" aria-hidden="true"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+      </div>
     </section>
 
     <section id="certificates" class="section container">
-      <h2>Certificates</h2>
-      <p class="section-desc">Verified certificates and courses. Click a certificate to view details or open verification links.</p>
+      <header class="section-head">
+        <h2>Certifications</h2>
+        <p class="section-sub">Verified courses and certificates — click to view details.</p>
+      </header>
 
       <div class="cert-grid" id="cert-grid">
-        <!-- Sample certificates: change to your real certs & urls -->
-        <article class="cert-card" data-cert-id="cert-1" data-cert-url="https://example.com/cert1.pdf">
-          <img alt="Certificate 1 thumbnail" src="dark.webp" loading="lazy" />
+        <article class="cert-card" data-cert-url="https://example.com/cert1.pdf" tabindex="0">
+          <img src="dark.webp" alt="Certificate thumbnail">
           <div class="cert-body">
-            <h3>Front-end Development Certificate</h3>
-            <p class="muted">Example Institute — 2024</p>
+            <h3>Front-end Certification</h3>
+            <p class="muted">Example Institute · 2024</p>
             <div class="cert-actions">
-              <button class="btn-outline view-cert" data-id="cert-1">View</button>
+              <button class="btn-outline view-cert" data-id="cert-1">Preview</button>
               <a class="btn-ghost" href="https://example.com/cert1" target="_blank" rel="noopener">Verify</a>
             </div>
           </div>
         </article>
 
-        <article class="cert-card" data-cert-id="cert-2" data-cert-url="https://example.com/cert2.pdf">
-          <img alt="Certificate 2 thumbnail" src="dark.webp" loading="lazy" />
+        <article class="cert-card" data-cert-url="https://example.com/cert2.pdf" tabindex="0">
+          <img src="dark.webp" alt="Certificate thumbnail">
           <div class="cert-body">
             <h3>Accessible Web Design</h3>
-            <p class="muted">Accessibility Org — 2023</p>
+            <p class="muted">Accessibility Org · 2023</p>
             <div class="cert-actions">
-              <button class="btn-outline view-cert" data-id="cert-2">View</button>
+              <button class="btn-outline view-cert" data-id="cert-2">Preview</button>
               <a class="btn-ghost" href="https://example.com/cert2" target="_blank" rel="noopener">Verify</a>
             </div>
           </div>
         </article>
       </div>
 
-      <!-- Modal for certificate viewer -->
+      <!-- Modal viewer -->
       <div id="cert-modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cert-modal-title">
-        <div class="modal-content" role="document">
-          <button class="modal-close" aria-label="Close certificate viewer">✕</button>
+        <div class="modal-wrap" role="document">
+          <button class="modal-close" aria-label="Close viewer">✕</button>
           <h3 id="cert-modal-title">Certificate</h3>
-          <div class="modal-body">
-            <!-- image or embedded PDF will appear here -->
-            <img id="cert-modal-image" src="" alt="" />
-            <p id="cert-modal-meta" class="muted"></p>
+          <div class="modal-body" id="cert-modal-body">
+            <!-- dynamic content (img or iframe) -->
+          </div>
+          <div class="modal-footer">
             <a id="cert-modal-open" class="btn-outline" href="#" target="_blank" rel="noopener">Open verification</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="todo" class="section container">
-      <h2>To‑Do</h2>
-      <p class="section-desc">A lightweight to‑do list stored in your browser (localStorage).</p>
+    <section id="extras" class="section container">
+      <header class="section-head">
+        <h2>Extras</h2>
+        <p class="section-sub">Small utilities and extras: a compact To‑Do, and a printable résumé.</p>
+      </header>
 
-      <div class="todo-app" aria-live="polite">
-        <form id="todo-form" class="todo-form" aria-label="Add a new task">
-          <label for="todo-input" class="sr-only">New task</label>
-          <input id="todo-input" name="task" type="text" placeholder="Add a new task…" autocomplete="off" required />
-          <button type="submit" class="btn-primary">Add</button>
-        </form>
+      <div class="extras-grid">
+        <div class="card todo-card">
+          <h3>Quick To‑Do</h3>
+          <form id="todo-form" class="todo-form" aria-label="Add a new task">
+            <input id="todo-input" name="task" type="text" placeholder="Add a task…" autocomplete="off" required>
+            <button class="btn-primary" type="submit">Add</button>
+          </form>
 
-        <div class="todo-controls" aria-hidden="false">
-          <div class="filters" role="tablist" aria-label="Filter tasks">
-            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
-            <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">Active</button>
-            <button class="filter-btn" data-filter="completed" role="tab" aria-selected="false">Completed</button>
-          </div>
-
-          <div class="todo-actions">
-            <button id="clear-completed" class="btn-ghost">Clear completed</button>
-            <button id="clear-all" class="btn-ghost" title="Remove all tasks">Clear all</button>
-          </div>
-        </div>
-
-        <ul id="todo-list" class="todo-list" aria-label="Tasks list"></ul>
-
-        <div class="todo-footer">
-          <span id="items-left" class="muted">0 items left</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section container">
-      <h2>Selected projects</h2>
-      <p class="section-desc">Small selection of recent work and experiments.</p>
-
-      <div class="projects-grid">
-        <article class="project-card">
-          <img src="project 1.jpg" alt="Screenshot of Project 1" loading="lazy" />
-          <div class="project-body">
-            <h3>Project 1</h3>
-            <p class="project-desc">Brief description of the project, the tech used and the problem solved.</p>
-            <div class="project-actions">
-              <a class="btn-outline" href="#" aria-label="View project 1">View</a>
-              <a class="btn-ghost" href="#" aria-label="Source for project 1">Source</a>
+          <div class="todo-controls">
+            <div class="filters">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="active">Active</button>
+              <button class="filter-btn" data-filter="completed">Done</button>
+            </div>
+            <div class="todo-actions">
+              <button id="clear-completed" class="btn-ghost">Clear done</button>
+              <button id="clear-all" class="btn-ghost">Clear all</button>
             </div>
           </div>
-        </article>
-      </div>
-    </section>
 
-    <section id="about" class="section container">
-      <h2>About</h2>
-      <p>I enjoy building performant and accessible web apps. I care about clarity, maintainability, and delightful interactions.</p>
+          <ul id="todo-list" class="todo-list" aria-label="Tasks list"></ul>
+          <div class="todo-footer"><span id="items-left" class="muted">0 items left</span></div>
+        </div>
+
+        <div class="card resume-card">
+          <h3>Résumé</h3>
+          <p class="muted">Download a printable PDF or view an optimized online résumé.</p>
+          <div class="card-actions">
+            <a class="btn-primary" href="resume.pdf" download>Download PDF</a>
+            <a class="btn-outline" href="#" target="_blank" rel="noopener">View online</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="contact" class="section container">
-      <h2>Contact</h2>
-      <p>If you'd like to work together, send me a message — or use the mailto link below.</p>
+      <header class="section-head">
+        <h2>Contact</h2>
+        <p class="section-sub">Open to freelance and collaboration — let's build something great.</p>
+      </header>
 
       <form class="contact-form" action="mailto:your-email@example.com" method="get">
         <label for="name">Name</label>
-        <input id="name" name="name" type="text" required />
+        <input id="name" name="name" type="text" required>
 
         <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
+        <input id="email" name="email" type="email" required>
 
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="6" required></textarea>
 
         <div class="form-actions">
-          <button class="btn-primary" type="submit">Send email</button>
-          <a class="btn-outline" href="mailto:daboma230@gmail.com">Open mail client</a>
+          <button class="btn-primary" type="submit">Send</button>
+          <a class="btn-outline" href="mailto:your-email@example.com">Open mail</a>
         </div>
       </form>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Hunduma Aboma</p>
-      <ul class="social">
-        <li><a href="https://github.com/hunde-del" rel="noopener">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/hunduma-aboma-a832512a4/" rel="noopener">LinkedIn</a></li>
-      </ul>
+      <p>© <span id="year"></span> hunde‑del — Built with accessibility & performance in mind.</p>
+      <p class="muted">Designed for clarity • Available for hire</p>
     </div>
   </footer>
 
